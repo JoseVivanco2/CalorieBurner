@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var pounds: UITextField!
+    
+    @IBOutlet weak var days: UITextField!
+    
+    @IBOutlet weak var calories: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +26,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func calculate(_ sender: Any) {
+        
+        let firstValue = Double(pounds.text! )
+        let secondValue = Double(days.text! )
+        
+        if firstValue != nil && secondValue != nil {
+            let outPutValue = Double(firstValue! * 700 / secondValue!)
+            calories.text = "\(outPutValue)"}
+        
+        else{
+            calories.text = "no"
+        }
+    }
 }
 
